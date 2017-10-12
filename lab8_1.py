@@ -3,18 +3,13 @@
 
 def lastOfUs(amount, step) :
 	guys = [i for i in range(1, amount+1)]
-	nguys = []
-	print(guys)
-	while(len(guys) > 1) :
-		for i, v in enumerate(guys) :
-			if i+1 + step > len(guys) :
-			elif (i+1) % step :
-				nguys[] = v
-
+	while len(guys) > 1 :
+		fakeStep = step
+		while fakeStep > len(guys) : fakeStep -= len(guys)
+		guys = guys[fakeStep:] + guys[:fakeStep-1]
+		#print(guys)
+	return guys[0]
+		
 a = int(input("Enter amount of guys: "))
-
-if a > 0 and a < 1000 :
-	lastOfUs(a,3)
-	#print("The last guys is {}".format(lastOfUs(a,3)))
-else:
-	print("How am I supposed to calculate this?")
+c = int(input("Enter step: "))
+print("The last guy is {}".format(lastOfUs(a,c) if a > 0 else "nobody"))
