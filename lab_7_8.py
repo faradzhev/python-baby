@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-import re
 	
 def app():
 	for i in range(1, 101) :
